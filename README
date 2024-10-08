@@ -1,0 +1,46 @@
+Duca Andrei-Rares
+311CA
+
+	Main program:
+
+  The algorithm continues execution as long as commands are entered.
+  Through the variable "nr" we find out how many words the entered text has,
+a fact that will help us discover if it is a valid command.
+  The program observes if it is finished before freeing the memory of a picture
+and frees it.
+
+	Functions used:
+
+-alloc_m and free_m: for memory allocation and release.
+
+-free_all: used both at the end of the program and after the exit command. It is
+also used in the load function, when we already have a picture loaded.
+
+-load (with p2, p3, p5, p6 and skip_comm): performs the operation of loading a
+picture into memory. Helper functions are used to read the file type
+corresponding to magic word.
+
+-select_z / select_all: select either a coordinate area of the picture or the
+whole picture.
+
+-histogram: make the histogram of the image, using the formula, the maximum
+number of * and the number of bins.
+
+-equalize: a grayscale image is required, for which equalization can be done. In
+the case of images with an incorrect exposure, certain details in them could be
+neglected, for this reason needing the equalize command.
+
+-rotate (with check_selection, r_180, r_90_all/r_90_sel, r_270_all/r_270_sel):
+rotates the selected square surface, or the entire picture, with one of the
+supported angles (0, +-90, +-180, +-270, +-360).
+
+-crop: cut the image referring only to the old selected area from now on.
+
+-apply (with help_apply, a_red, a_green, a_blue): a color image is requested,
+for which to apply the selected filter (EDGE, SHARPEN, BLUR, GAUSSIAN_BLUR).
+Each of a_red/a_green/a_blue apply the selected filter to the matrix containing
+the specified color.
+
+-save: saves the entire edited image according to the 2 possible types, ascii or
+binary. The name of the saved file, which contains the new picture, is given
+from the keyboard.
